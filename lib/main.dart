@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:mangatek/core/config/config.holder.dart';
 import 'package:mangatek/core/theme/theme.helper.dart';
 
-void main() {
+void main() async {
+  /// Initialize config from env
+  await ConfigHolder().initialize();
+
+  /// Run app
   runApp(const MyApp());
 }
 
@@ -12,9 +17,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: ConfigHolder().config.appName,
+      debugShowCheckedModeBanner: !ConfigHolder().config.isProd,
       theme: ThemeHelper.theme,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: ConfigHolder().config.appName),
     );
   }
 }

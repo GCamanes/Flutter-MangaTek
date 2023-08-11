@@ -12,6 +12,8 @@ There is 2 env :
 - prod
 
 To set it at compile time, add this to your run/build command:
-```--dart-define-from-file=env/dev.env```
+```--dart-define-from-file=env/dev.env.json```
 or
-```--dart-define-from-file=env/prod.env```
+```--dart-define-from-file=env/prod.env.json```
+
+
