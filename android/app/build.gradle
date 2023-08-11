@@ -44,14 +44,16 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.mangatek"
+        applicationId "com.groupany.mangatek"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        applicationIdSuffix APP_SUFFIX
+        resValue "string", "app_name", APP_NAME
+        // resValue "string", "img_name", "@mipmap/ic_launcher$APP_ICON_SUFFIX"
     }
 
     buildTypes {
