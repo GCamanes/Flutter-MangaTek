@@ -11,7 +11,6 @@ class ThemeHelper {
   );
 
   static final ColorScheme _colorScheme = ColorScheme.fromSeed(
-    brightness: Brightness.light,
     seedColor: ColorsHelper.primary,
     secondary: ColorsHelper.secondary,
     secondaryContainer: ColorsHelper.secondary,
