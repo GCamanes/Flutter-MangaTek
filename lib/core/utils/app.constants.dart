@@ -4,6 +4,6 @@ import 'package:flutter/material.dart';
 class AppConstants {
   const AppConstants._();
 
-  static String get envNameKey => 'ENV_NAME';
-  static String get appNameKey => 'APP_NAME';
+  static const String envNameKey = 'ENV_NAME';
+  static const String appNameKey = 'APP_NAME';
 }

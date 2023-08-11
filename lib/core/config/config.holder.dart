@@ -1,4 +1,5 @@
 import 'package:mangatek/core/config/config.entity.dart';
+import 'package:mangatek/core/utils/app.constants.dart';
 
 class ConfigHolder {
   factory ConfigHolder() {
@@ -21,11 +22,9 @@ class ConfigHolder {
   }
 
   Future<void> initialize() async {
-    const String envName = String.fromEnvironment('ENV_NAME');
-    const String appName = String.fromEnvironment('APP_NAME');
     currentConfig = ConfigEntity(
-      envName: envName,
-      appName: appName,
+      envName: const String.fromEnvironment(AppConstants.envNameKey),
+      appName: const String.fromEnvironment(AppConstants.appNameKey),
     );
 
     /// Add here other values if needed
