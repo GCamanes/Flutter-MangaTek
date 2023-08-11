@@ -58,6 +58,13 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+    println "Switches to $ENV_NAME google-service.json"
+    copy {
+        from "src/$ENV_NAME"
+        include '*.json'
+        into '.'
+    }
+
     defaultConfig {
         applicationId "com.groupany.mangatek"
         // You can update the following values to match your application needs.

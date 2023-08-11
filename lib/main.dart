@@ -1,10 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mangatek/core/config/config.holder.dart';
 import 'package:mangatek/core/theme/theme.helper.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   /// Initialize config from env
   await ConfigHolder().initialize();
+
+  /// Firebase initialization
+  await Firebase.initializeApp(
+    options: ConfigHolder().firebaseConfig,
+  );
 
   /// Run app
   runApp(const MyApp());
