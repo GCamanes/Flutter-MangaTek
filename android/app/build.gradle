@@ -21,6 +21,18 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+def envVariables = [
+    APP_NAME: project.hasProperty('APP_NAME')
+            ? APP_NAME
+            : 'MangaTek',
+    APP_SUFFIX: project.hasProperty('APP_SUFFIX')
+            ? APP_SUFFIX
+            : '',
+    APP_ICON_SUFFIX: project.hasProperty('APP_ICON_SUFFIX')
+            ? APP_ICON_SUFFIX
+            : '',
+];
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
@@ -51,9 +63,9 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        applicationIdSuffix APP_SUFFIX
-        resValue "string", "app_name", APP_NAME
-        // resValue "string", "img_name", "@mipmap/ic_launcher$APP_ICON_SUFFIX"
+        applicationIdSuffix envVariables.APP_SUFFIX
+        resValue "string", "app_name", envVariables.APP_NAME
+        //resValue "string", "img_name", "@mipmap/ic_launcher${envVariables.APP_ICON_SUFFIX}"
     }
 
     buildTypes {
