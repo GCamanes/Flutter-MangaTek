@@ -45,3 +45,13 @@ app.*.map.json
 
 # FVM
 flutter_sdk
+
+# Firebase
+/ios/config/dev/firebase_app_id_file.json
+/ios/config/prod/firebase_app_id_file.json
+/lib/core/config/firebase_configuration.dev.dart
+/lib/core/config/firebase_configuration.prod.dart
+/android/app/src/dev/google-services.json
+/android/app/src/prod/google-services.json
+/ios/config/dev/GoogleService-Info.plist
+/ios/config/prod/GoogleService-Info.plist
