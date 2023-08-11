@@ -22,8 +22,37 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    avoid_print: true
+
+    # Make constructors the first thing in every class
+    sort_constructors_first: true
+
+    prefer_single_quotes: true
+    prefer_double_quotes: false
+
+    always_specify_types: true
+
+    # Back to the 80s
+    lines_longer_than_80_chars: true
+
+    # Specify only values different from default values
+    avoid_redundant_argument_values: true
+
+    # ALWAYS use package imports for files in lib/.
+    always_use_package_imports: true
+
+    # CONSIDER omitting type annotations for local variables.
+    omit_local_variable_types: false
+
+    # For short members whose body is a single return statement.
+    prefer_expression_function_bodies: true
+
+    # DO use trailing commas for all function calls and declarations unless the function call or
+    # definition, from the start of the function name up to the closing parenthesis,
+    # fits in a single line.
+    require_trailing_commas: true
+
+    always_declare_return_types: true
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

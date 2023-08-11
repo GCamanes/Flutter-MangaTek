@@ -2,9 +2,7 @@ import 'package:mangatek/core/config/config.entity.dart';
 import 'package:mangatek/core/utils/app.constants.dart';
 
 class ConfigHolder {
-  factory ConfigHolder() {
-    return _instance;
-  }
+  factory ConfigHolder() => _instance;
 
   ConfigHolder._default() {
     currentConfig = ConfigEntity(
